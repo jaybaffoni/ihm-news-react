@@ -1,5 +1,5 @@
 import React from "react"
-import { config } from "./config";
+import { config } from "../config";
 import companyLogo from "../../images/company-logo.jpg"
 
 const Avatar = ({size='xs', rounded=true, source=companyLogo}) => {
