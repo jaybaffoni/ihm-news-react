@@ -1,6 +1,6 @@
 import React from "react"
 import companyLogo from "../../images/company-logo.jpg"
-import { config } from "./config";
+import { config } from "../config";
 
 const CompanyLogo = ({size='large', rounded=false}) => {
   return (
