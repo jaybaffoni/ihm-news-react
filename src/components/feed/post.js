@@ -1,5 +1,6 @@
 import React from "react"
 import Avatar from "../common/avatar";
+import { config } from "../config";
 
 const Post = ({postData}) => {
 
@@ -7,14 +8,14 @@ const Post = ({postData}) => {
     
     const boxStyle = {
         color: "White",
-        backgroundColor: "DarkBlue",
+        backgroundColor: config.colors.primary,
         textAlign: "center",
         padding: "35px"
       };
 
       const displayNameStyle = {
           fontWeight: "bold",
-          color: "Yellow"
+          color: config.colors.secondary
       };
 
       const textStyle = {
@@ -23,7 +24,7 @@ const Post = ({postData}) => {
 
       const timeStampStyle = {
             fontSize: "12px",
-            color: "gray"
+            color: config.colors.secondary
       };
      
     return (
