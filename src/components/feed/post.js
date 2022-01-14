@@ -9,7 +9,7 @@ const Post = ({postData}) => {
         color: "White",
         backgroundColor: "DarkBlue",
         textAlign: "center",
-        padding: "35px",
+        padding: "35px"
       };
 
       const displayNameStyle = {
