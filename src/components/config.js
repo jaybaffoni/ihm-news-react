@@ -8,7 +8,12 @@ export const config = {
     colors:{
         primary:"#0a1334",
         secondary:"#b5781f",
-        dark:"#f0f0f0",
-        light:"#0f0f0f"
+        dark:"#0f0f0f",
+        light:"#f0f0f0"
+    },
+    styles:{
+        elevated: {
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+        }
     }
 }
