@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react"
 import Avatar from "../common/avatar";
 import { config } from "../config";
@@ -5,6 +6,7 @@ import { config } from "../config";
 const Post = ({postData}) => {
 
     let {id, avatar, timeStamp, displayName, edited, text} = postData;
+    let relativeTimeString = moment(timeStamp).fromNow();
     
     const boxStyle = {
         color: "White",
@@ -58,7 +60,7 @@ const Post = ({postData}) => {
                         <p style={textStyle}>{text}</p>
                     </div>
                     </div>
-                <p style={timeStampStyle}>{timeStamp}</p>
+                <p style={timeStampStyle}>{relativeTimeString}</p>
             </div>
         </div>
     )
