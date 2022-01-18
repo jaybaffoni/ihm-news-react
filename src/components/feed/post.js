@@ -9,33 +9,56 @@ const Post = ({postData}) => {
     const boxStyle = {
         color: "White",
         backgroundColor: config.colors.primary,
-        textAlign: "center",
-        padding: "35px"
+        textAlign: "left",
+        padding: 35,
+        margin: 10,
+        position: "relative"
+      };
+
+      const avatarStyle = {
+        display:"flex",
+        flexDirection: "horizontal"
+      };
+
+      const avatarDisplayBoxStyle = {
+          display: "flex",
+          flexDirection: "horizontal"
+      }
+
+      const senderNameTextStyle = {
+        marginLeft: 20
       };
 
       const displayNameStyle = {
-          fontWeight: "bold",
-          color: config.colors.secondary
+        fontWeight: "bold",
+        color: config.colors.secondary
       };
 
       const textStyle = {
-            fontStyle: "Arial",
+        fontStyle: "Arial",
       };
 
       const timeStampStyle = {
-            fontSize: "12px",
-            color: config.colors.secondary
+        fontSize: "12px",
+        color: config.colors.secondary,
+        position: "absolute",
+        bottom: 3,
+        right: 30
       };
      
     return (
         <div>
             <div container style={boxStyle}>
-                <p>{id}</p>
-                <Avatar source={avatar}/>
-                <p style={displayNameStyle}>{displayName}</p>
-                <p style={textStyle}>{text}</p>
+                <div container style={avatarDisplayBoxStyle}>
+                    <div container style={avatarStyle}>
+                        <Avatar source={avatar}/>
+                    </div>
+                    <div container style={senderNameTextStyle}>
+                        <p style={displayNameStyle}>{displayName}</p>
+                        <p style={textStyle}>{text}</p>
+                    </div>
+                    </div>
                 <p style={timeStampStyle}>{timeStamp}</p>
-                <p>edited: {edited}</p>
             </div>
         </div>
     )
