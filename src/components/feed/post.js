@@ -9,12 +9,12 @@ const Post = ({postData}) => {
     let relativeTimeString = moment(timeStamp).fromNow();
     
     const boxStyle = {
-        color: "White",
-        backgroundColor: config.colors.primary,
+        backgroundColor: config.colors.light,
         textAlign: "left",
-        padding: 35,
-        margin: 10,
-        position: "relative"
+        padding: 24,
+        width: '100%',
+        maxWidth: 500,
+        borderBottom: '1px solid ' + config.colors.primary
       };
 
       const avatarStyle = {
@@ -27,42 +27,42 @@ const Post = ({postData}) => {
           flexDirection: "horizontal"
       }
 
-      const senderNameTextStyle = {
-        marginLeft: 20
+      const innerContainer = {
+        marginLeft: 20,
+        flex: 1
       };
 
       const displayNameStyle = {
         fontWeight: "bold",
-        color: config.colors.secondary
+        color: config.colors.primary,
+        margin: 0,
       };
 
       const textStyle = {
         fontStyle: "Arial",
+        margin: 0,
       };
 
       const timeStampStyle = {
         fontSize: "12px",
         color: config.colors.secondary,
-        position: "absolute",
-        bottom: 3,
-        right: 30
+        textAlign: 'end',
+        margin: 0,
       };
      
     return (
-        <div>
-            <div container style={boxStyle}>
-                <div container style={avatarDisplayBoxStyle}>
-                    <div container style={avatarStyle}>
-                        <Avatar source={avatar}/>
-                    </div>
-                    <div container style={senderNameTextStyle}>
-                        <p style={displayNameStyle}>{displayName}</p>
-                        <p style={textStyle}>{text}</p>
-                    </div>
-                    </div>
-                <p style={timeStampStyle}>{relativeTimeString}</p>
-            </div>
-        </div>
+          <div style={boxStyle}>
+              <div style={avatarDisplayBoxStyle}>
+                  <div style={avatarStyle}>
+                      <Avatar source={avatar}/>
+                  </div>
+                  <div style={innerContainer}>
+                      <p style={displayNameStyle}>{displayName}</p>
+                      <p style={textStyle}>{text}</p>
+                      <p style={timeStampStyle}>{relativeTimeString}</p>
+                  </div>
+                </div>
+          </div>
     )
 };
 

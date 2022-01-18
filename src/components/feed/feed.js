@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+import { config } from "../config";
 import Post from "./post";
 import { getPosts } from "./services/api";
 
@@ -20,8 +21,17 @@ const Feed = () => {
       })
   }
 
+  let style = {
+    width: '100%', 
+    alignItems: 'center', 
+    backgroundColor: config.colors.primary,
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh'
+  }
+
   return (
-    <div>
+    <div style={style}>
       {displayPosts()}
     </div>
   )
