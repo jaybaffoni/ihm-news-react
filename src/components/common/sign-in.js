@@ -16,8 +16,9 @@ const SignIn = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '100vh',
-            backgroundColor: config.colors.light 
+            minHeight: '100vh',
+            backgroundColor: config.colors.primary,
+            paddingTop: 32
         },
         innerContainer: {
             backgroundColor: config.colors.primary,
