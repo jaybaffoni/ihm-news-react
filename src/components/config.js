@@ -30,6 +30,30 @@ export const config = {
         {
             name: 'Contact',
             link: 'http://twitter.com'
+        },
+        {
+            name: 'Home',
+            link: 'http://www.google.com'
+        },
+        {
+            name: 'About',
+            link: 'http://github.com'
+        },
+        {
+            name: 'Contact',
+            link: 'http://twitter.com'
+        },
+        {
+            name: 'Home',
+            link: 'http://www.google.com'
+        },
+        {
+            name: 'About',
+            link: 'http://github.com'
+        },
+        {
+            name: 'Contact',
+            link: 'http://twitter.com'
         }
     ]
 }

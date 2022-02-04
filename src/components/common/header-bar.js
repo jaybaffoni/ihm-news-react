@@ -4,7 +4,7 @@ import { config } from "../config";
 import { AppButton } from "./app-button";
 import CompanyLogo from "./company-logo";
 
-const HeaderBar = (props) => {
+const HeaderBar = ({color=config.colors.light, variant="light"}) => {
 
   //state variables here
   const [variable, setVariable] = useState(true);
@@ -18,8 +18,21 @@ const HeaderBar = (props) => {
       return links.map((item, i) => <Nav.Link href={item.link}>{item.name}</Nav.Link>)
   }
 
-  return (
-      <Navbar expand="sm" fixed="top" style={{backgroundColor: config.colors.light, paddingLeft:16, paddingRight:16}} variant="light">
+  const getExpansionSize = () => {
+        const length = links.length;
+        if(length <= 3) {
+            return "sm";
+        } else if (length <= 5) {
+            return "md";
+        } else if (length <= 7) {
+            return "lg";
+        } else {
+            return "xl";
+        }
+  };
+  
+    return (
+      <Navbar expand={getExpansionSize()} fixed="top" style={{backgroundColor: color, paddingLeft:16, paddingRight:16}} variant={variant}>
     <Navbar.Brand href="#home">
         <CompanyLogo size="xxs" rounded/>    
     </Navbar.Brand>
@@ -34,5 +47,4 @@ const HeaderBar = (props) => {
   </Navbar>
   )
 };
-
 export default HeaderBar;
